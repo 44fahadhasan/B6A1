@@ -89,9 +89,21 @@ function getUniqueValues(
   array1: UniqueValuesT,
   array2: UniqueValuesT
 ): UniqueValuesT {
+  const uniqueValues: UniqueValuesT = [];
+
   const mergedArray = [...array1, ...array2];
-  const uniqueValues = new Set(mergedArray);
-  return [...uniqueValues];
+
+  const arrayLenght = mergedArray.length;
+
+  for (let i = 0; i < arrayLenght; i++) {
+    const value = mergedArray[i];
+
+    if (!uniqueValues.includes(value)) {
+      uniqueValues.push(value);
+    }
+  }
+
+  return uniqueValues;
 }
 
 const array1 = [1, 2, 3, 4, 5];
