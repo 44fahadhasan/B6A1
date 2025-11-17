@@ -82,3 +82,17 @@ const myBook: Book = {
   publishedYear: 1925,
   isAvailable: true,
 };
+
+type UniqueValuesT = (string | number)[];
+
+function getUniqueValues(
+  array1: UniqueValuesT,
+  array2: UniqueValuesT
+): UniqueValuesT {
+  const mergedArray = [...array1, ...array2];
+  const uniqueValues = new Set(mergedArray);
+  return [...uniqueValues];
+}
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
