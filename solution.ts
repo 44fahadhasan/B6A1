@@ -29,3 +29,18 @@ class Person {
 
 const person1 = new Person("John Doe", 30);
 const person2 = new Person("Alice", 25);
+
+type BookT = {
+  title: string;
+  rating: number;
+};
+
+function filterByRating(array: BookT[]): BookT[] {
+  return array.filter((item) => item.rating >= 4);
+}
+
+const books = [
+  { title: "Book A", rating: 4.5 },
+  { title: "Book B", rating: 3.2 },
+  { title: "Book C", rating: 5.0 },
+];
