@@ -61,3 +61,24 @@ const users = [
   { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
   { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
 ];
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+function printBookDetails(book: Book): void {
+  const isAvailable = book.isAvailable ? "Yes" : "No";
+  const bookDetails = `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${isAvailable}`;
+
+  console.log(bookDetails);
+}
+
+const myBook: Book = {
+  title: "The Great Gatsby",
+  author: "F. Scott Fitzgerald",
+  publishedYear: 1925,
+  isAvailable: true,
+};
