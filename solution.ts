@@ -96,3 +96,33 @@ function getUniqueValues(
 
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
+
+type ProductT = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+function calculateTotalPrice(products: ProductT[]): number {
+  if (!products.length) return 0;
+
+  const totalPrice = products.reduce((total, product) => {
+    let eachProductTotal = product.price * product.quantity;
+
+    if (product.discount) {
+      eachProductTotal =
+        eachProductTotal - (eachProductTotal * product.discount) / 100;
+    }
+
+    return total + eachProductTotal;
+  }, 0);
+
+  return totalPrice;
+}
+
+const products: ProductT[] = [
+  { name: "Pen", price: 10, quantity: 2 },
+  { name: "Notebook", price: 25, quantity: 3, discount: 10 },
+  { name: "Bag", price: 50, quantity: 1, discount: 20 },
+];
