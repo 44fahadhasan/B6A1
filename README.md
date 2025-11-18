@@ -1,4 +1,4 @@
-TypeScript এ interfaces এবং types মধ্যে কিছু পার্থক্য কী?
+What are some differences between interfaces and types in TypeScript?
 
 TypeScript এর Type হলো বিভিন্ন ডেটার ধরন (type) কীভাবে ব্যবহার হবে— সে বিষয়টা নিয়ন্ত্রণ করে।
 
